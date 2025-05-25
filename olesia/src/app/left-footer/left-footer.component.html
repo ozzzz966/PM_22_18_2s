@@ -1,0 +1,16 @@
+<!-- Contact Section -->
+<footer class="contact-footer">
+  <div class="footer-container">
+    @if (contacts){
+      <div class="yellow-bar">
+      </div>
+    }
+    <div class="contact-info">
+
+      @for (item of contacts; track item.title){
+          <app-contact [contact]=item></app-contact>
+      }
+
+    </div>
+  </div>
+</footer>

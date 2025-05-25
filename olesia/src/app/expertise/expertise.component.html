@@ -1,0 +1,11 @@
+<!-- Expertise Section -->
+<section class="expertise">
+  <h3>EXPERTISE</h3>
+  <ul>
+
+    @for (item of expertise; track item.name){
+      <app-skill [data]=item></app-skill>
+    }
+
+  </ul>
+</section>

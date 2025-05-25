@@ -1,0 +1,29 @@
+<section class="form">
+  <h1>Вхід</h1>
+  <form [formGroup]="SignInForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email">
+    </div>
+    <div *ngIf="SignInForm.get('email')?.invalid && SignInForm.get('email')?.touched">
+      <span *ngIf="SignInForm.get('email')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="SignInForm.get('email')?.errors?.['email']">Некоректний email</span>
+    </div>
+
+    <div>
+      <label>Пароль:</label>
+      <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="SignInForm.get('password')?.invalid && SignInForm.get('password')?.touched">
+      <span *ngIf="SignInForm.get('password')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="SignInForm.get('password')?.errors?.['invalidPassword']">
+        Пароль має містити мінімум 6 символів, 1 велику літеру, 1 маленьку літеру і 1 цифру
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="SignInForm.invalid">Увійти</button>
+  </form>
+
+</section>
+
+<app-nav></app-nav>

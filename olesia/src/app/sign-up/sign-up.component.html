@@ -1,0 +1,29 @@
+<script src="sign-up.component.ts"></script>
+<section class="form">
+  <h1>Реєстрація</h1>
+  <form [formGroup]="SignUpForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email">
+    </div>
+    <div *ngIf="SignUpForm.get('email')?.invalid && SignUpForm.get('email')?.touched">
+      <span *ngIf="SignUpForm.get('email')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="SignUpForm.get('email')?.errors?.['email']">Некоректний email</span>
+    </div>
+
+    <div>
+      <label>Пароль:</label>
+      <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="SignUpForm.get('password')?.invalid && SignUpForm.get('password')?.touched">
+      <span *ngIf="SignUpForm.get('password')?.errors?.['required']">Поле обов'язкове</span>
+      <span *ngIf="SignUpForm.get('password')?.errors?.['invalidPassword']">
+        Пароль має містити мінімум 6 символів, 1 велику літеру, 1 маленьку літеру і 1 цифру
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="SignUpForm.invalid">Зареєструватися</button>
+  </form>
+
+</section>
+<app-nav></app-nav>

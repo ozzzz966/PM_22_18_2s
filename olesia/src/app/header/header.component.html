@@ -1,0 +1,25 @@
+<!-- Header Section -->
+<header class="header">
+  <div class="profile-photo">
+    <div class="yellow-block"></div>
+    @if (headerData){
+    <img src="{{headerData.img}}" width="300px" height="300px" alt="{{headerData.photoName}}">
+    }
+  </div>
+  <div class="profile-info">
+    @if (headerData){
+    <h1><span class="bold">{{headerData.name}}</span> {{headerData.surname}}</h1>
+    }
+    <div class="job-title">
+      @if (headerData){
+      <span class="job-label">{{headerData.job}}</span>
+      }
+    </div>
+    <div class="profile-description">
+      @if (headerData){
+      <h2>{{headerData.profile}}</h2>
+      <p>{{headerData.description}}</p>
+      }
+    </div>
+  </div>
+</header>

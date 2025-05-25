@@ -1,0 +1,9 @@
+<!-- Work Experience Section -->
+<section class="work-experience">
+  <h2 class="section-title">WORK EXPERIENCE</h2>
+
+  @for (item of works; track item.date){
+    <app-work [job]=item></app-work>
+  }
+
+</section>

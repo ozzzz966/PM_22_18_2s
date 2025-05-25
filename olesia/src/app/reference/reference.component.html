@@ -1,0 +1,11 @@
+<!-- Reference Section -->
+<section class="reference">
+  <h2 class="section-title">REFERENCE</h2>
+  <div class="reference-item">
+
+    @for (item of references; track item.name){
+      <app-reference-item [reference]=item></app-reference-item>
+    }
+
+  </div>
+</section>

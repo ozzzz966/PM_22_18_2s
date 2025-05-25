@@ -1,0 +1,11 @@
+<!-- Interests Section -->
+<section class="interests">
+  <h2>INTERESTS</h2>
+  <div class="interest-items">
+
+    @for (item of interests; track item.img){
+      <app-interest-item [interest]=item></app-interest-item>
+    }
+
+  </div>
+</section>

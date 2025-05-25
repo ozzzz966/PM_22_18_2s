@@ -1,0 +1,9 @@
+<!-- Education Section -->
+<section class="education">
+  <h3>EDUCATION</h3>
+
+  @for (item of education; track item.years){
+    <app-educationItem [education]=item></app-educationItem>
+  }
+
+</section>
